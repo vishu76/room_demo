@@ -13,22 +13,36 @@ public class Employee {
     public String employee_phone_no;
     public String employee_email;
     public String employee_address;
+    public String employee_age;
+    public String employee_fees;
 
-    public Employee(String employee_name, String employee_department, String employee_phone_no, String employee_email, String employee_address) {
+
+    public Employee(String employee_name, String employee_department, String employee_phone_no, String employee_email, String employee_address, String employee_age) {
         this.employee_name = employee_name;
         this.employee_department = employee_department;
         this.employee_phone_no = employee_phone_no;
         this.employee_email = employee_email;
         this.employee_address = employee_address;
+        this.employee_age = employee_age;
     }
+
     @Ignore
-    public Employee(int employee_id, String employee_name, String employee_department, String employee_phone_no, String employee_email, String employee_address) {
+    public Employee(int employee_id, String employee_name, String employee_department, String employee_phone_no, String employee_email, String employee_address, String employee_age) {
         this.employee_id = employee_id;
         this.employee_name = employee_name;
         this.employee_department = employee_department;
         this.employee_phone_no = employee_phone_no;
         this.employee_email = employee_email;
         this.employee_address = employee_address;
+        this.employee_age = employee_age;
+    }
+
+    public String getEmployee_age() {
+        return employee_age;
+    }
+
+    public void setEmployee_age(String employee_age) {
+        this.employee_age = employee_age;
     }
 
     public int getEmployee_id() {

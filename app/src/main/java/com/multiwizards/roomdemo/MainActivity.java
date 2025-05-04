@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Employee employee = new Employee(
                         mainBinding.editName.getText().toString(), mainBinding.editDepartment.getText().toString() ,  mainBinding.editPhone.getText().toString(),
-                        "vishwjeetbharti@gmail.com",  mainBinding.editAddress.getText().toString());
+                        "vishwjeetbharti@gmail.com",  mainBinding.editAddress.getText().toString(),mainBinding.editAge.getText().toString());
                 new Thread(() -> {
                     long id=  employeeDatabase.employeeDAO().insert_data(employee);
                     String insertMessage;
@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                         mainBinding.editPhone.setText("");
                         mainBinding.editAddress.setText("");
                         Toast.makeText(MainActivity.this, insertMessage, Toast.LENGTH_SHORT).show();
-                        // Update RecyclerView after insertion
                         employeeAdapter.updateData(data);
                     });
                 }).start();
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 employeeAdapter.update_employeeData(mainBinding.editName.getText().toString(), mainBinding.editDepartment.getText().toString() ,  mainBinding.editPhone.getText().toString()
-                         ,mainBinding.editAddress.getText().toString());
+                         ,mainBinding.editAddress.getText().toString(),mainBinding.editAge.getText().toString());
             }
         });
     }

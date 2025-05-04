@@ -5,16 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.multiwizards.roomdemo.R;
 import com.multiwizards.roomdemo.database.Employee;
 import com.multiwizards.roomdemo.database.EmployeeDatabase;
 import com.multiwizards.roomdemo.databinding.ActivityMainBinding;
 import com.multiwizards.roomdemo.databinding.EmployeeSingleBinding;
-
 import java.util.List;
 
 public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.employeeViewHolder> {
@@ -78,9 +75,9 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.employ
         data.addAll(newData);
         notifyDataSetChanged();
     }
-    public void update_employeeData(String name, String department, String phoneno, String address) {
+    public void update_employeeData(String name, String department, String phoneno, String address, String age) {
         if (employee_id!=0){
-            Employee newdata= new Employee(employee_id,name,department,phoneno,"viswajeetbharti@gmail.com",address);
+            Employee newdata= new Employee(employee_id,name,department,phoneno,"viswajeetbharti@gmail.com",address, age);
             employeeDatabase.employeeDAO().update(newdata);
             employee_id=0;
             mainBinding.editName.setText("");
