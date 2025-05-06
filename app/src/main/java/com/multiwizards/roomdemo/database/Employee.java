@@ -15,6 +15,9 @@ public class Employee {
     public String employee_address;
     public String employee_age;
     public String employee_fees;
+    public String employee_salary;
+    public String employee_salary_one;
+    public String employee_salary_two;
 
 
     public Employee(String employee_name, String employee_department, String employee_phone_no, String employee_email, String employee_address, String employee_age) {
